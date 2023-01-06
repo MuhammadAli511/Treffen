@@ -1,10 +1,8 @@
 import { useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
 import {
-  BsFillMicFill,
-  BsFillMicMuteFill,
   BsFillCameraVideoFill,
-  BsFillCameraVideoOffFill,
+  BsFillCameraVideoOffFill, BsFillMicFill,
+  BsFillMicMuteFill
 } from "react-icons/bs";
 import { FaUsers } from "react-icons/fa";
 import {
@@ -12,12 +10,13 @@ import {
   MdEditNote,
   MdMessage,
   MdScreenShare,
-  MdStopScreenShare,
+  MdStopScreenShare
 } from "react-icons/md";
+import { useLocation, useNavigate } from "react-router-dom";
 
+import { useEffect } from "react";
 import { useClient } from "../../config";
 import styles from "./index.module.css";
-import { useEffect } from "react";
 
 const VideoCallControls = ({
   tracks,
@@ -96,9 +95,18 @@ const VideoCallControls = ({
       console.log(isFrames)
       if (isFrames) {
         const imageData=tracks[1].getCurrentFrameData();
-        console.log(imageData)
+        const canvas = document.createElement("canvas");
+            canvas.width = imageData.width;
+            canvas.height = imageData.height;
+            const ctx = canvas.getContext("2d");
+            ctx.putImageData(imageData, 0, 0);
+            const dataURL = canvas.toDataURL("image/png");
+            const link = document.createElement("a");
+            link.download = "frame.png";
+            link.setAttribute("href", dataURL);
+            link.click();
       }
-    }, 1000);
+    }, 5000);
     return () => clearInterval(interval);
   }, [isFrames]);
 

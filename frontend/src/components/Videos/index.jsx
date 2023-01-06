@@ -67,19 +67,19 @@ const Videos = ({
           // link.setAttribute("href", dataURL);
           // link.click();
           // download frame continuously
-          const interval = setInterval(() => {
-            const frame = videoTrack.getCurrentFrameData();
-            const canvas = document.createElement("canvas");
-            canvas.width = frame.width;
-            canvas.height = frame.height;
-            const ctx = canvas.getContext("2d");
-            ctx.putImageData(frame, 0, 0);
-            const dataURL = canvas.toDataURL("image/png");
-            const link = document.createElement("a");
-            link.download = "frame.png";
-            link.setAttribute("href", dataURL);
-            link.click();
-          }, 200);
+          // const interval = setInterval(() => {
+          //   const frame = videoTrack.getCurrentFrameData();
+          //   const canvas = document.createElement("canvas");
+          //   canvas.width = frame.width;
+          //   canvas.height = frame.height;
+          //   const ctx = canvas.getContext("2d");
+          //   ctx.putImageData(frame, 0, 0);
+          //   const dataURL = canvas.toDataURL("image/png");
+          //   const link = document.createElement("a");
+          //   link.download = "frame.png";
+          //   link.setAttribute("href", dataURL);
+          //   link.click();
+          // }, 200);
           
           
         

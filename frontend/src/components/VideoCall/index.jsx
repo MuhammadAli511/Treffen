@@ -45,7 +45,7 @@ const VideoCall = ({ ready, tracks, token, setInCall }) => {
   const client = useClient();
 
   useEffect(() => {
-    const myUID = Math.floor(Math.random() * 1000000000);
+    const myUID = "user-" + Math.floor(Math.random() * 1000000000);
     setMyUid(myUID);
 
     const init = async (channelName) => {
