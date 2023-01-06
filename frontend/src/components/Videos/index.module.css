@@ -1,0 +1,51 @@
+.videos {
+  width: 100%;
+  height: 85%;
+  padding: 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 8px;
+  justify-items: center;
+  align-items: center;
+}
+
+.video {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+  border-radius: 0.6rem;
+  position: relative;
+}
+
+.video div {
+  border-radius: 0.6rem;
+}
+
+.icon {
+  display: block;
+  width: 75px;
+  height: 75px;
+  padding: 0.5rem;
+  border-radius: 100%;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 26px #fff;
+  text-align: center;
+}
+
+.username {
+  color: #fff;
+  width: max-content;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.icon > .username {
+  top: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+}

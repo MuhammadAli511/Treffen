@@ -1,0 +1,40 @@
+.Room{
+    margin-left:2vw;
+    height:100%;
+    width:100%;
+}
+.start-meeting-button{
+    margin: 10px;
+    background-color: #007acc;
+    color: #fff;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    padding:0.9rem;
+}
+
+.start-meeting-button:hover{
+    background-color: #0a5587;
+    color: #fff;
+}   
+
+.Meeting-id{
+    padding:1rem;
+    padding-right: 5rem;
+    border: 1px solid  white;
+    color:white;
+    border-radius: 1rem;
+
+}
+
+.title{
+    color: white;
+    font-size: 4rem;
+    font-weight: 600;
+    margin-top: 8rem;
+    margin-left:0.45rem;
+    margin-bottom: 5rem;
+}

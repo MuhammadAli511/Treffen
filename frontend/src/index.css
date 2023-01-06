@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Varela";
+  src: url("./public/fonts/VarelaRound-Regular.ttf");
+}

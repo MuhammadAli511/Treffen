@@ -1,0 +1,231 @@
+.navbarMain{
+    padding-top: 1rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.websiteLogo{
+    font-size: 2rem/* 36px */;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+    
+    padding-top: 0.25rem/* 4px */;
+    padding-bottom: 0.25rem/* 4px */;
+}
+
+.navbarList{
+    list-style:none;
+    margin-top: 16px;
+    display: flex;
+}
+
+.navbarLink1{
+    text-decoration: none;
+    font-weight: bold;
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
+    font-size: 1.45rem/* 20px */;
+    line-height: 1.75rem/* 28px */;   
+}
+
+.navbarLink{
+    text-decoration: none;
+    font-weight: bold;
+    padding-left: 60px;
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
+    font-size: 1.45rem/* 20px */;
+    line-height: 1.75rem/* 28px */;   
+}
+
+.navbarLink:hover{
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+    transition-timing-function: ease-in-out;
+    transition: 0.5s;
+}
+
+.navbarLink1:hover{
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+    transition-timing-function: ease-in-out;
+    transition: 0.5s;
+}
+
+.loginButtonDiv{
+    text-align: center;
+}
+
+.loginButton{
+    display: inline-flex;
+    align-items: center;
+    padding-left: 2rem/* 32px */;
+    padding-right: 2rem/* 32px */;
+    padding-top: 0.3rem/* 8px */;
+    padding-bottom: 0.3rem/* 8px */;
+    background: linear-gradient( to right, #000000, #000000 ), linear-gradient(to right, #00ccd3, #371f76);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 9999px;
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
+    font-size: 1.25rem/* 20px */;
+    line-height: 1.75rem/* 28px */;
+}
+
+
+.loginButton:hover{
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+    transition-timing-function: ease-in-out;
+    transition: 0.5s;
+}
+
+*{
+    font-family: Varela, varela;
+    margin: 0;
+    padding: 0;
+}
+
+.heading{
+    height: 100%;
+    padding: 1.4rem 2.5rem 0;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.titleText{
+    max-width: 800px;
+    font-size: 2.80rem;
+    margin: 0 auto;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.titleSub{
+    max-width: 800px;
+    font-size: 1.5rem;
+    margin: 0 auto;
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+.mainImage{
+    width: 31%;
+    height: 31%;
+    margin: 0 auto;
+}
+
+.signinTitle{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.signtitleText{
+    max-width: 800px;
+    font-size: 2.80rem;
+    margin: 0 auto;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.mainLink{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.signsubtitleText{
+    max-width: 800px;
+    font-size: 1.2rem;
+    margin: 0;
+    color: #ffffff;
+    display: inline;
+}
+
+.signuplink{
+    max-width: 800px;
+    font-size: 1.2rem;
+    margin: 0;
+    color: #009afe;
+    display: inline;
+}
+
+.signupTitle{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.titleText{
+    max-width: 800px;
+    font-size: 2.80rem;
+    margin: 0 auto;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.regContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.regForm{
+    padding-bottom: 50px;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px 15px rgba(85, 128, 134, 0.308);
+}
+
+.regInput{
+    background-color: #333333;
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    color: #FFFFFF;
+}
+
+.regButton{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #009afe;
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid #009afe;
+}
+
+.subtitleText{
+    max-width: 800px;
+    font-size: 1rem;
+    margin: 0;
+    color: #ffffff;
+    display: inline;
+}
+
+.signinlink{
+    max-width: 800px;
+    font-size: 1rem;
+    margin: 0;
+    color: #009afe;
+    display: inline;
+}
