@@ -82,7 +82,16 @@ const VideoCall = ({ ready, tracks, token, setInCall }) => {
       if (tracks) {
         let tracksToPublish = [];
         if (tracks[0].enabled) tracksToPublish.push(tracks[0]);
-        if (tracks[1].enabled) tracksToPublish.push(tracks[1]);
+        if (tracks[1].enabled){
+          tracksToPublish.push(tracks[1]);
+          console.log("aaaaaaaaaaaaaaaaaaaaaaaaa")
+          const videoTrack = tracks[1];
+          console.log(videoTrack);
+          const frame = videoTrack.getCurrentFrameData();
+          console.log(frame);
+
+          
+        };
         if (tracksToPublish.length === 0) {
           toast.error(
             "Can not join with both audio & video disabled! Please Leave & Rejoin"
