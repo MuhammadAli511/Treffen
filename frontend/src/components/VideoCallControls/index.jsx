@@ -17,6 +17,7 @@ import {
 
 import { useClient } from "../../config";
 import styles from "./index.module.css";
+import { useEffect } from "react";
 
 const VideoCallControls = ({
   tracks,
@@ -36,10 +37,12 @@ const VideoCallControls = ({
   const navigate = useNavigate();
   const location = useLocation();
   const client = useClient();
+  const [isFrames, setIsFrames] = useState(false);
   // const [trackState, setTrackState] = useState({
   //   video: tracks[1]?.enabled,
   //   audio: tracks[0]?.enabled,
   // });
+  
 
   const mute = (type) => async () => {
     if (type === "audio") await tracks[0].setEnabled(!trackState[type]);
@@ -63,6 +66,7 @@ const VideoCallControls = ({
     navigate("/treffen", { state: { from: location.pathname } });
   };
 
+
   const toggleScreenShare = () => setShareScreen(!shareScreen);
 
   const toggleMode = (mode) => () => {
@@ -74,6 +78,30 @@ const VideoCallControls = ({
       setIsPanelOpen(true);
     }
   };
+  const toggleFrames = () => {
+    if (isFrames) {
+      console.log("isFrames",isFrames)
+      setIsFrames(false);
+    }
+    else{
+      setIsFrames(true);
+    }
+  }
+
+  // call toggleFrames continuously until the user clicks the button again
+  useEffect(() => {
+    console.log("useEffect")
+    const interval = setInterval(() => {
+      console.log("in Interval")
+      console.log(isFrames)
+      if (isFrames) {
+        const imageData=tracks[1].getCurrentFrameData();
+        console.log(imageData)
+      }
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [isFrames]);
+
 
   return (
     <div
@@ -94,6 +122,12 @@ const VideoCallControls = ({
           <BsFillCameraVideoOffFill />
         )}
       </button>
+      {/* make a toggle button and call function when clicked  */}
+
+      <button className={shareScreen ? "on" : ""} onClick={toggleFrames}>
+        {shareScreen ? <MdStopScreenShare /> : <MdScreenShare />}
+      </button>
+
     </div>
   );
 };
