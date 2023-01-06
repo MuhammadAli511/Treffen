@@ -52,7 +52,7 @@ const VideoCallControls = ({
 
   
   const leaveChannel = async () => {
-    await rtmClient.logout();
+    //await rtmClient.logout();
     await client.leave();
     client.removeAllListeners();
     tracks[0].close();
@@ -83,24 +83,16 @@ const VideoCallControls = ({
       <button className={trackState.audio ? "on" : ""} onClick={mute("audio")}>
         {trackState.audio ? <BsFillMicFill /> : <BsFillMicMuteFill />}
       </button>
+     
+      <button className={styles.end_call} onClick={() => leaveChannel()}>
+        <MdCallEnd />
+      </button>
       <button className={trackState.video ? "on" : ""} onClick={mute("video")}>
         {trackState.video ? (
           <BsFillCameraVideoFill />
         ) : (
           <BsFillCameraVideoOffFill />
         )}
-      </button>
-      <button onClick={toggleScreenShare}>
-        {shareScreen ? <MdStopScreenShare /> : <MdScreenShare />}
-      </button>
-      <button className={styles.end_call} onClick={() => leaveChannel()}>
-        <MdCallEnd />
-      </button>
-      <button onClick={toggleMode("people")}>
-        <FaUsers />
-      </button>
-      <button onClick={toggleMode("chat")}>
-        <MdMessage />
       </button>
     </div>
   );
