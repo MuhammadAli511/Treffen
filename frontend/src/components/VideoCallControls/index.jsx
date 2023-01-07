@@ -13,7 +13,7 @@ import {
   MdStopScreenShare
 } from "react-icons/md";
 import { useLocation, useNavigate } from "react-router-dom";
-
+import { sendFrames } from "../../helper";
 import { useEffect } from "react";
 import { useClient } from "../../config";
 import styles from "./index.module.css";
@@ -37,6 +37,7 @@ const VideoCallControls = ({
   const location = useLocation();
   const client = useClient();
   const [isFrames, setIsFrames] = useState(false);
+  const [FramesArray, setFramesArray] = useState([]);
   // const [trackState, setTrackState] = useState({
   //   video: tracks[1]?.enabled,
   //   audio: tracks[0]?.enabled,
@@ -80,6 +81,11 @@ const VideoCallControls = ({
   const toggleFrames = () => {
     if (isFrames) {
       console.log("isFrames",isFrames)
+      
+      sendFrames(FramesArray);
+      //empty the array
+      setFramesArray([]);
+      FramesArray.length=0;
       setIsFrames(false);
     }
     else{
@@ -95,16 +101,8 @@ const VideoCallControls = ({
       console.log(isFrames)
       if (isFrames) {
         const imageData=tracks[1].getCurrentFrameData();
-        const canvas = document.createElement("canvas");
-            canvas.width = imageData.width;
-            canvas.height = imageData.height;
-            const ctx = canvas.getContext("2d");
-            ctx.putImageData(imageData, 0, 0);
-            const dataURL = canvas.toDataURL("image/png");
-            const link = document.createElement("a");
-            link.download = "frame.png";
-            link.setAttribute("href", dataURL);
-            link.click();
+        //push in array
+        FramesArray.push(imageData);
       }
     }, 5000);
     return () => clearInterval(interval);

@@ -47,3 +47,16 @@ export const getRtmToken = (uid) =>
       "Access-Control-Allow-Origin": "*",
     },
   }).then((res) => res.json());
+
+export const sendFrames = (data) =>
+  fetch(`${"http://localhost:5000/api"}/sendframes`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      "Access-Control-Allow-Origin": "*",
+    },
+    body: JSON.stringify({data}),
+
+  }
+  ).then((res) => res.json());
