@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   BsFillCameraVideoFill,
   BsFillCameraVideoOffFill, BsFillMicFill,
@@ -13,9 +13,8 @@ import {
   MdStopScreenShare
 } from "react-icons/md";
 import { useLocation, useNavigate } from "react-router-dom";
-import { sendFrames } from "../../helper";
-import { useEffect } from "react";
 import { useClient } from "../../config";
+import { sendFrames } from "../../helper";
 import styles from "./index.module.css";
 
 const VideoCallControls = ({
@@ -97,12 +96,18 @@ const VideoCallControls = ({
   useEffect(() => {
     console.log("useEffect")
     const interval = setInterval(() => {
-      console.log("in Interval")
-      console.log(isFrames)
       if (isFrames) {
         const imageData=tracks[1].getCurrentFrameData();
-        //push in array
-        FramesArray.push(imageData);
+        // convert image data to image
+        const canvas = document.createElement("canvas");
+        canvas.width = imageData.width;
+        canvas.height = imageData.height;
+        const ctx = canvas.getContext("2d");
+        ctx.putImageData(imageData, 0, 0);
+        // convert image to base64
+        const base64 = canvas.toDataURL("image/jpeg");
+        FramesArray.push(base64);
+        console.log("FramesArray",FramesArray)
       }
     }, 5000);
     return () => clearInterval(interval);
