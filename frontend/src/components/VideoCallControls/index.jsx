@@ -132,7 +132,11 @@ const VideoCallControls = ({
       {/* make a toggle button and call function when clicked  */}
 
       <button className={shareScreen ? "on" : ""} onClick={toggleFrames}>
-        {shareScreen ? <MdOutlineRecordVoiceOver /> : <MdRecordVoiceOver />}
+        {isFrames ? (
+          <MdRecordVoiceOver />
+        ) : (
+          <MdOutlineRecordVoiceOver />
+        )}
       </button>
 
     </div>
