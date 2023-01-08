@@ -6,11 +6,7 @@ import {
 } from "react-icons/bs";
 import { FaUsers } from "react-icons/fa";
 import {
-  MdCallEnd,
-  MdEditNote,
-  MdMessage,
-  MdScreenShare,
-  MdStopScreenShare
+  MdCallEnd, MdOutlineRecordVoiceOver, MdRecordVoiceOver
 } from "react-icons/md";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useClient } from "../../config";
@@ -136,7 +132,7 @@ const VideoCallControls = ({
       {/* make a toggle button and call function when clicked  */}
 
       <button className={shareScreen ? "on" : ""} onClick={toggleFrames}>
-        {shareScreen ? <MdStopScreenShare /> : <MdScreenShare />}
+        {shareScreen ? <MdOutlineRecordVoiceOver /> : <MdRecordVoiceOver />}
       </button>
 
     </div>

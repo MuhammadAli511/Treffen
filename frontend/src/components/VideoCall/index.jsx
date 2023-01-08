@@ -84,7 +84,6 @@ const VideoCall = ({ ready, tracks, token, setInCall }) => {
         if (tracks[0].enabled) tracksToPublish.push(tracks[0]);
         if (tracks[1].enabled){
           tracksToPublish.push(tracks[1]);
-          console.log("aaaaaaaaaaaaaaaaaaaaaaaaa")
           const videoTrack = tracks[1];
           console.log(videoTrack);
           const frame = videoTrack.getCurrentFrameData();
